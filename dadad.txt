@@ -1,0 +1,127 @@
+Ciudadano de primera clase
+Son argumentos, variables y retorno de otras funciones
+
+Funciones con nombre tienen comportamiento hoisting
+
+Funciones como argumento para otras funciones
+	function multiplicar(x, y)
+	{
+    		return x * y;
+	}
+
+	function calcular(operacion, op1, op2)
+	{	
+		return operacion(op1, op2);
+	}
+
+	console.log(calcular(multiplicar, 5, 7));
+
+
+Funciones anònimas
+Enviar la declaraciòn de la funciòn, no tiene nombre
+console.log(calcular(function(r, s){return r / s}, 5, 7));
+
+	
+Funciones flecha
+console.log(calcular((r, s)=>{return r / s}, 5, 7));
+
+
+Funciones de retrollamada (callback)
+function calcular2(a, b, callback)
+{
+    return callback(a, b);
+}
+
+		funciòn(arg1, arg2, funciòn flecha)
+console.log(calcular2(7, 3, (a,b) => {return a * b}));
+
+
+
+
+
+
+
+
+
+
+
+#373234 Dark Granite
+#E8DCCC Sandstone
+#F3ECE4 Pale Cream
+#D84339 Brick Red
+
+
+
+
+
+
+
+function sumar(x,y)
+{
+    return x + y;
+}
+
+function restar(x, y)
+{
+    return x - y;
+}
+
+function multiplicar(x, y)
+{
+    return x * y;
+}
+
+function saludar()
+{
+    console.log("hola");
+}
+
+function saludar2(n)
+{
+    console.log("Hola " + n);
+    console.log(`Hola ${n}, còmo estàs`);
+}
+
+console.log(sumar(3, 4));
+console.log(restar(3, 4));
+saludar();
+saludar2("tilin");
+
+function calcular(operacion, op1, op2)
+{
+    // console.log("Operando 1 = " + op1);
+    // console.log("Operando 2 = " + op2);
+    // console.log("Operaciòn = " + operacion);
+    // console.log(operacion(op1, op2));
+    return operacion(op1, op2);
+}
+
+console.log(calcular(function(r, s){return r / s}, 5, 7));
+console.log(calcular((r, s)=>{return r / s}, 5, 7));
+
+/*
+ Redeclaramos la funciòn calcular para mejor pràctica
+ y estar en acorde al estilo de programaciòn de la industria
+*/
+
+function calcular2(a, b, callback)
+{
+    return callback(a, b);
+}
+
+console.log(calcular2(7, 3, (a,b) => {return a * b}));
+console.log(calcular2(7, 3, (a,b) => {return a / b}));
+
+function calcular_iva(monto, iva, callback)
+{
+    return callback(monto, iva);
+}
+
+const extranjero = .21;
+const nacional = .16;
+console.log(calcular_iva(777, extranjero, (monto, iva) => {return monto + (monto * iva)}));
+console.log(calcular_iva(777, extranjero, (monto, iva) => {return monto + (monto * iva)}));
+
+
+
+
