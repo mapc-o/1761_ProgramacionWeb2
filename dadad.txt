@@ -32,7 +32,7 @@ function calcular2(a, b, callback)
     return callback(a, b);
 }
 
-		funciòn(arg1, arg2, funciòn flecha)
+//			funciòn(arg1, arg2, funciòn flecha)
 console.log(calcular2(7, 3, (a,b) => {return a * b}));
 
 
