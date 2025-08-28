@@ -125,3 +125,34 @@ console.log(calcular_iva(777, extranjero, (monto, iva) => {return monto + (monto
 
 
 
+
+
+
+
+
+
+function menu()
+{
+  console.log("***** KIOSKO FES ARAGÓN *****");
+  console.log("(1) Papas Fritas..........$17");
+  console.log("(2) Vaso de frutas........$25");
+  console.log("(3) Jugo de Naranja.......$30");
+  console.log("(4) Agua de Jamaica.......$15");
+  console.log("(5) Torta de Jamón........$25");
+
+  console.log("Modo de uso: código del producto, cantidad. Escribir 'fin' para concluir el proceso"); 
+}
+
+menu();
+
+
+function despachar(precio, cantidad, callback)
+{
+  return callback(precio, cantidad)
+}
+
+console.log(despachar)
+
+
+
+
