@@ -380,3 +380,71 @@ console.log("All assertions done.");
 
 
 
+
+
+
+************************************************************************01/09/2025************************************************************************
+
+
+HTML
+
+<DIV  class="container" id="principal">
+  <h2>TITULO</h2>
+  <DIV class="row" id="base">
+  </DIV>
+</DIV>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+JS
+
+let base = document.getElementById("base");
+const colores = ["primary", "secondary", "info"];
+const colores_boton = ["success", "danger", "warning"];
+const colores_boton2 = ["dark", "secondary"];
+
+for(let i = 0; i < 8; i++)
+{
+  let tarjeta = document.createElement("DIV");
+  tarjeta.className = "card col-3 m-1 mb-1";
+  tarjeta.innerHTML= `
+      <div class="card-body">
+      <h5 class="card-title bg-${colores[i % 3]}">Titulo${i}</h5>
+      <p class="card-text bg-${colores_boton[i % 3]}">Contenido</p>
+      <a href="#" class="btn btn-${colores_boton2[i % 2]}">Ir</a>
+    </div>`;
+  base.appendChild(tarjeta)
+
+}
+
+
+OPERADOR TERNARIO
+b = c > 5?hacer esto si es verdadero:si es falso hacer esto;
+<h5 class="card-title bg-${i % 3 == 0?"primary": i % 3 == 1?"success":"danger"}">Titulo</h5>
+
+
+
+
+ARREGLOS
+const colores = ["azul", "rojo", "verde"];
+console.log(colores[3]);
+colores[3] = "amarillo";
+console.log(colores);
+colores[4] = "fucsia";
+console.log(colores);
+for (let i = 0; i < colores.length; i++)
+{
+  // console.log(colores[i]);
+  for (let j = 0; j < colores[i].length; j++)
+  {
+    console.log(colores[i][j]);
+  }
+}
+
+
+
+
+
+
