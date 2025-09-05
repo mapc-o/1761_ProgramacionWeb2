@@ -478,3 +478,81 @@ boton2.addEventListener("mouseenter",()=>
 });
 
 
+
+
+
+
+
+
+
+************************************************************************05/09/2025************************************************************************
+
+HTML
+
+<div id="root">
+  <h1>Raiz</h1>
+  <div id="hijo">
+    <h2>hijo</h2>
+    <div id="nieto">
+      <h3>nieto</h3>
+      <div id="bisnieto">
+        <h4>bisnieto</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+CSS
+#root {
+  border: 2px solid;
+  padding: 10px;
+}
+#hijo {
+  border: 2px solid;
+  width: 80%;
+  padding: 10px;
+}
+#nieto {
+  border: 2px solid;
+  width: 80%;
+  padding: 10px;
+}
+
+#bisnieto {
+  border: 2px solid;
+  width: 80%;
+  padding: 10px;
+}
+
+
+JS
+let bisnieto = document.getElementById("bisnieto");
+let nieto = document.getElementById("nieto");
+let hijo = document.getElementById("hijo");
+let root = document.getElementById("root");
+
+bisnieto.addEventListener("click",(event)=>{
+  console.log("Evento en bisnieto");
+  console.log("X en div: " + event.x);
+  console.log("Y en div: " + event.y);
+  console.log("Tipo de evento: " + event.type);
+  console.log("Tag Origen: " + event.target);
+  console.log("Tiempo: " + event.timeStamp);
+});
+
+nieto.addEventListener("click", (event)=>{
+  console.log("Evento click en nieto");
+});
+hijo.addEventListener("click", (event)=>{
+  console.log("Evento click en hijo");
+  event.stopPropagation();
+});
+root.addEventListener("click", (event)=>{
+  console.log("Evento click en root");
+  console.log("Tag: " + event.target.tagName);
+  console.log("ID: " + event.target.id);
+});
+
+document.addEventListener("click", (event)=>{
+  console.log("DOM");
+});
