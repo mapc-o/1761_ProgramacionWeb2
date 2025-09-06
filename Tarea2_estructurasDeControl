@@ -1,4 +1,4 @@
-// CONDICIONAL IF
+console.log("CONDICIONAL IF");
 let edad = 20;
 
 if (edad >= 18)
@@ -7,7 +7,7 @@ if (edad >= 18)
 }
 console.log("Fin");
 
-// CONSOLE IF-ELSE
+console.log("CONSOLE IF-ELSE");
 let edad = 20;
 if (edad >= 18)
 {
@@ -17,7 +17,7 @@ if (edad >= 18)
 }
 console.log("Fin.");
 
-// CONDICIONAL ANIDADA
+console.log("CONDICIONAL ANIDADA");
 let edad = 20;
 let traeIne = true;
 if (edad >= 18)
@@ -38,7 +38,7 @@ else
 }
 console.log("Fin");
 
-// SELECCIÒN MÙLTIPLE CON IF
+console.log("SELECCIÒN MÙLTIPLE CON IF");
 let dia = "dd";
 if (dia == "lunes")
 {
@@ -66,7 +66,7 @@ else
 }
 
 
-// SELECCIÒN MÙTLIPLCE CON SWITCH
+console.log("SELECCIÒN MÙTLIPLCE CON SWITCH");
 let dia = "sabado";
 switch(dia)
 {
@@ -83,7 +83,7 @@ switch(dia)
    console.log("Pre viernes");
    break;
  case "viernes":
-   console.log("Hoy yoca y el cuerpo lo sabe!!!");
+   console.log("Hoy toca y el cuerpo lo sabe!!!");
    break;
  default:
    console.log("A descansar!");
@@ -92,21 +92,21 @@ switch(dia)
 
 
 
-//REPETICIÒN CICLOS FOR
+console.log("REPETICIÒN CICLOS FOR");
 for (let i = 1; i <= 5; i++)
 {
  console.log("Hola: " + i);
 }
 
 
-// REPETICIÒN CICLOS FOR
+console.log("REPETICIÒN CICLOS FOR");
 const miArray = ["a", "b", "c"];
 for (let indice in miArray)
 {
  console.log(indice);
 }
 
-
+console.log("REPETICIÓN CICLOS WHILE");
 let contador = 1;
 while (contador <= 5)
 {
@@ -122,7 +122,7 @@ for (let i = 0; i < calificaciones.length; i++)
 }
 
 
-// REPETICIÒN CICLOS DO-while
+console.log("REPETICIÒN CICLOS DO-while");
 let numero = 0;
 do {
  console.log("Numero: " + numero);
@@ -131,79 +131,7 @@ do {
 while (numero < 3)
 
 
-// BREAK Y CONTINUE
-for (let i = 1; i <= 10; i++)
-{
- if (i == 3) continue;
- if (i == 5) break;
- console.log("i = " + i);
-}
-
-
-// SELECCIÒN MÙTLIPLCE CON SWITCH
-let dia = "sabado";
-switch(dia)
-{
- case "lunes":
-   console.log("Inicio de semana");
-   break;
- case "martes":
-   console.log("Segundo Lunes");
-   break;
- case "miercoles":
-   console.log("Ombligo de la semana");
-   break;
- case "jueves":
-   console.log("Pre viernes");
-   break;
- case "viernes":
-   console.log("Hoy yoca y el cuerpo lo sabe!!!");
-   break;
- default:
-   console.log("A descansar!");
-}
-
-
-//REPETICIÒN CICLOS FOR
-for (let i = 1; i <= 5; i++)
-{
- console.log("Hola: " + i);
-}
-
-
-// REPETICIÒN CICLOS FOR
-const miArray = ["a", "b", "c"];
-for (let indice in miArray)
-{
- console.log(indice);
-}
-
-
-let contador = 1;
-while (contador <= 5)
-{
- console.log("Contador " + contador);
- contador++;
-}
-
-
-const calificaciones = [9, 7, 10, 5, 8];
-for (let i = 0; i < calificaciones.length; i++)
-{
- console.log(calificaciones[i]);
-}
-
-
-// REPETICIÒN CICLOS DO-while
-let numero = 0;
-do {
- console.log("Numero: " + numero);
- numero++;
-}
-while (numero < 3)
-
-
-// BREAK Y CONTINUE
+console.log("BREAK Y CONTINUE");
 for (let i = 1; i <= 10; i++)
 {
  if (i == 3) continue;
@@ -225,4 +153,7 @@ function recorrerArray(array, callback)
 recorrerArray([1, 2, 3], function(num) {
  console.log("Nùmero: ", numm);
 });
+
+
+
 
