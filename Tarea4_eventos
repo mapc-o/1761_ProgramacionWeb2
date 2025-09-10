@@ -1,0 +1,84 @@
+<form action="/algo" id="formulario">
+  <input type="text" id="nombre" name="nombre">
+  <input type="text" id="edad" name="edad">
+  <select name="autos" id="autos">
+    <option value="mazda">Mazda</option>
+    <option value="ford">Ford</option>
+    <option value="honda">Honda</option>
+    <option value="vw">VW</option>
+  </select>
+  <button id="enviar">Enviar</button>
+</form>
+
+<a href="https://www.papimes.net" id="liga">Ir a la UNAM</a>
+
+
+
+let liga = document.getElementById("liga");
+let nombre = document.getElementById("nombre");
+
+liga.addEventListener("click",(e)=>
+{
+  console.log("Click sobre el link");
+  // sobreescribir el comportamiento HTML, a null
+  e.preventDefault();
+});
+
+nombre.addEventListener("keydown", (e)=>{
+  // e.preventDefault();
+  console.log(e.type);
+  console.log("Codigo: " + e.code);
+  console.log("Key: " + e.key);
+  console.log(e.repeat);
+  console.log(e.ctrlKey ? "presionaste ctrl + " + e.key : "solo " + e.key);
+  nombre.innerText = nombre.innerText + e.key;
+/*
+  if (e.key == 'a')
+  {
+    document.getElementById("edad").focus();
+  }
+*/
+  if (e.key == 'enter')
+  {
+    console.log("Enter capturado");
+    document.getElementById("edad").focus();
+  }
+
+  console.log("Location teclado: " + e.location);
+
+});
+
+document.getElementById("formulario").addEventListener("submit", (e)=>{
+  console.log("Validar campos...");
+  console.log("se enviò el formulario");
+  e.preventDefault();
+});
+
+document.getElementById("autos").addEventListener("change", (e)=>{
+  console.log("Se cambiò el valor");
+  console.log(document.getElementById("autos").value);
+})
+
+
+
+
+<div id="fuente" draggable="true">Fuente</div>
+<br><br>
+<div id="destino">Destino</div>
+
+
+let fuente = document.getElementById("fuente");
+let destino = document.getElementById("destino");
+
+fuente.addEventListener("dragstart",(e)=>{
+  console.log("Iniciò el arrastre: ");
+});
+
+destino.addEventListener("dragover", (e)=>{
+  e.preventDefault();
+});
+
+destino.addEventListener("drop", (e)=>{
+  e.preventDefault();
+  console.log("Soltado");
+});
