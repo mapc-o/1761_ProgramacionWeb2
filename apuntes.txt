@@ -673,3 +673,110 @@ destino.addEventListener("drop", (cincomascincopatata)=>{
   cincomascincopatata.preventDefault();
   console.log("Soltado");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************10/09/2025************************************************************************
+
+<div id="origen" draggable="true">Origen</div>
+<br><br>
+<div id="destino">Destino</div>
+
+
+
+
+#origen {
+  background-color: bisque;
+  height: 60px;
+  width: 60px;
+  border: 2px; solid;
+}
+
+#destino {
+  background-color: chocolate;
+  height: 100px;
+  width: 100px;
+  border: 2px; solid;
+}
+
+
+let origen = document.getElementById("origen");
+let destino = document.getElementById("destino");
+
+origen.addEventListener("dragstart", (e)=>{
+  e.dataTransfer.setData("plain/text", "dato importante");
+  e.dataTransfer.setData("application/id", "101");
+  e.dataTransfer.setData("application/json", JSON.stringify({
+    id: 101,
+    nombre = 'Jose',
+    saldo: 545646.9,
+    activo: true
+  }
+  ));
+  console.log("Inicio del arrastre");
+});
+
+destino.addEventListener("dragover",(e)=>{
+  e.preventDefault();
+});
+
+destino.addEventListener("drop", (e)=>{
+  e.preventDefault();
+  console.log("soltado");
+  const datos = e.dataTransfer.getData("plain/text");
+  console.log(datos);
+  console.log("Id de usuario = " + e.dataTransfer.getData("application/id"));
+  console.log("El usuario = " + JSON.parse(e.dataTransfer.getData("application/json")));
+});
+
+
+
+
+PORTAPAPELES
+
+
+<div id="main">
+  <input type="text" id="nombre" name="nombre">
+  <p id="salida">...</p>
+</div>
+
+
+
+let campo = document.getElementById("nombre");
+let mensaje = document.getElementById("salida");
+
+
+campo.addEventListener("copy", (e) => {
+  console.log("copiado");
+  e.clipboardData.setData("text", window.getSelection().toString());
+  e.preventDefault();
+  mensaje.innerText = "copiado..." + window.getSelection().toString();
+});
+
+campo.addEventListener("paste", (e)=>{
+  console.log("pegado");
+  const pegado = e.clipboardData.getData("text");
+  mensaje.innerText = "pegado: " + pegado;
+});
+
+window.addEventListener("beforeprint", (e)=>{
+  console.log("Antes de imprimir");
+  campo.style.display = "none";
+  alert("Ejemplo...");
+});
+
+window.addEventListener("afterprint", (e)=>{
+  console.log("Despues de imprimir");
+  campo.style.display = "block";
+  alert("Ejemplo despuès de terminar la impresiòn...");
+});
