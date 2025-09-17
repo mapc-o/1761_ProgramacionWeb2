@@ -807,3 +807,80 @@ video.addEventListener("ended", ()=>{
 video.addEventListener("pause", ()=>{
   console.log("video pausado");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************17/09/2025************************************************************************
+<div id="caja" class="caja">
+  <h2>Titulo</h2>
+</div>
+
+
+.caja {
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+  border: solid;
+}
+
+@keyframes prueba {
+  from {
+    background-color: tomato;
+    left: 0px;
+    top: 0px;
+  }
+  to {
+    background-color: purple;
+    left: 100px;
+    top: 100px;
+    width: 50px;
+  }
+}
+
+.demo {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: solid;
+  background-color: blue;
+  animation-name: prueba;
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: 5;
+}
+
+
+let caja = document.getElementById("caja");
+
+caja.addEventListener("click", ()=>{
+  console.log("Iniciar animaciòn");
+  caja.className = "demo"
+});
+
+caja.addEventListener("animationstart", (e)=> {
+  console.log("Se iniciò el evento...");
+});
+
+caja.addEventListener("animationend", (e)=>{
+  caja.className = "caja";
+});
+
+
+
