@@ -884,3 +884,96 @@ caja.addEventListener("animationend", (e)=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************19/09/2025************************************************************************
+<div id="principal" class="bonito"> texto en div
+  <h1>Titulo</h1>
+  <p id="parrafo1">q</p>
+  <p id="parrafo2">q</p>
+  <p id="parrafo3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque sed similique corrupti quas ratione ipsum porro suscipit quibusdam, perspiciatis obcaecati magni aliquam reiciendis animi exercitationem error explicabo! Cum, placeat suscipit.</p>
+</div>
+
+
+
+
+.bonito {
+  background-color: #A94C4C;
+}
+
+.feo {
+  background-color: lightgreen;
+}
+
+
+
+
+/*let principal = document.getElementById("principal");
+
+console.log("Principal: " + principal);
+console.log(principal.nodeName);
+console.log(principal.nodeType);
+// console.log(principal.attributes);
+
+for (let atributo of principal.attributes)
+{
+  console.log("Atributo: " + atributo.nodeName);
+  console.log("Valor: " + atributo.nodeValue);
+}
+
+console.log("EXPLORAR EL PADRE DEL DIV");
+const padre = principal.parentNode;
+console.log(padre.nodeName);
+console.log(padre.nodeType);
+console.log(padre.innerHTML);
+console.log(padre.innerText);
+*/
+/*
+console.log("EXPLORAR CHILD NODES");
+const allChildren = principal.childNodes;
+// console.log(allChildren);
+console.log("Nùmero de hijos: " + allChildren.length);
+for (let child of allChildren)
+{
+  console.log(child.nodeName + " -- " + child.nodeType);
+  console.log("==> " + child.textContent + " <==");
+}
+*/
+
+console.log("EXPLORAR SÒLO LOS QUE SON TAG HTML");
+const childTags = principal.children;
+console.log("Hijos que son tag: " + childTags.length);
+
+console.log("EXPLORAR LOS TAGS");
+for (let tag of childTags)
+{
+  console.log(tag.nodeName + "  " + tag.nodeType);
+}
+
+console.log("Obtener el FIRST CHILD");
+console.log(principal.firstElementChild.nodeName + "  " + principal.firstElementChild.nodeType);
+console.log(principal.firstChild.nodeName + "  " + principal.firstChild.nodeType);
+
+
+console.log("Obtener el LAST CHILD");
+console.log(principal.lastElementChild.nodeName + "  " + principal.lastElementChild.nodeType);
+console.log(principal.lastChild.nodeName + "  " + principal.lastChild.nodeType);
