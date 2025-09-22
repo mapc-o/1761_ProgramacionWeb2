@@ -1,0 +1,93 @@
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  font-family: "Comic Relief";
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.drag-zone {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+  margin: auto;
+  height: 200px;
+}
+
+.drop-zone {
+  height: 300px;
+  width: 500px;
+  background-color: #000;
+  padding: 20px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: auto;
+}
+
+
+h1 {
+  text-align: center;
+  letter-spacing: 10px;
+  font-size: 80px;
+}
+
+button {
+  width: 85px;
+  height: 50px;
+  border: solid 2px;
+  margin: 12px;
+  font-size: 20px;
+  border-radius: 100px;
+  position: relative;
+  color: #000;
+}
+
+
+
+@keyframes movimiento {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 300px;
+  }
+}
+
+.arraste {
+  animation-name: movimiento;
+  animation-duration: 1s;
+}
+
+.ganar {
+  background-color: seagreen;
+  justify-content: center;
+}
+
+.perder {
+  background-color: indianred;
+  justify-content: center;
+}
+
+.img1 {
+  filter: invert(50%);
+  width: 400px;
+}
+
+.img2 {
+  filter: invert(50%);
+  transform: scaleX(-1);
+  width: 400px;
+}
