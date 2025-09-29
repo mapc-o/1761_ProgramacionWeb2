@@ -977,3 +977,54 @@ console.log(principal.firstChild.nodeName + "  " + principal.firstChild.nodeType
 console.log("Obtener el LAST CHILD");
 console.log(principal.lastElementChild.nodeName + "  " + principal.lastElementChild.nodeType);
 console.log(principal.lastChild.nodeName + "  " + principal.lastChild.nodeType);
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************29/09/2025************************************************************************
+
+<ul>
+  <li>uno</li>
+  <li>dos</li>
+  <li>tres</li>
+</ul>
+
+<p>c mamo</p>
+<p>c mamut</p>
+<p>c marnat</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni vel, esse praesentium recusandae aliquid consectetur enim optio fugit veniam dicta rerum cupiditate harum alias fuga voluptatum, necessitatibus exercitationem perferendis.</p>
+
+
+let elementos = document.getElementsByTagName('li');
+console.log("Elementos lista = " + elementos.length);
+
+for (let li of elementos)
+{
+  console.log(li.innerText);
+  li.style.color = 'tomato';
+}
+
+let parrafos = document.getElementsByTagName('p');
+for (let parr of parrafos)
+{
+  parr.style.color = '#5067fa';
+}
+
+
+#C6B895	morado
+#F5EEE2	coral
+#FB7F64	blanco
+#3C303E beige
+
+#FF7747	anaranjado
+#FFFFFF	blanco
+#67A69C	turquesa
+#3E4B4B gris
