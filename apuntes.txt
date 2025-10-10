@@ -1028,3 +1028,102 @@ for (let parr of parrafos)
 #FFFFFF	blanco
 #67A69C	turquesa
 #3E4B4B gris
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$ npm install chistes-aleatorios
+npm install chistes-aleatorios -g
+ npm ls paq instalados localmente
+uninstall
+
+
+
+
+10/10/2025
+node
+module.paths
+.exit
+
+npm init //configurar el package json
+
+cat package.json
+
+{
+  "name": "clienteweb",
+  "version": "0.0.1",
+  "description": "Ejemplo de un cliente web",
+  "main": "index.js",
+  "scripts": {
+    "test": "pruebas.js",
+    "start" : "node index.js"
+
+  },
+  "keywords": [
+    "cliente",
+    "web"
+  ],
+  "author": "mapco",
+  "license": "MIT",
+  "dependencies" : {
+        "teeny-request" : "10.1.0",
+        "chalk" : "2.4.2"
+        }
+}
+
+npm install
+
+nano index.js
+const request = require('teeny-request').teenyRequest;
+const chalk = require('chalk');
+
+console.log("Hola mundo node JS !!!");
+
+request({uri: 'https://www.google.com'}, (err, resp, cuerpo)=>{
+        console.log(err);
+        console.log(resp.statusCode);
+        // console.log(resp);
+        console.log(chalk.green("Codigo: " + resp.statusCode));
+
+} );
+
+console.log("Algo màs");
+console.log("Fin");
+
+npm start
+
+npm install qr-creator --save //instala localmente y lo agrega a las dependencias en package.json
+		npm install -g algo //instala para todo el sistema (usuarios), no cambia el package.json
+		npm uninstall algo //desinstala localmente
+		npm update -save //actualiza los paquetes y el package.json
+	
+
+
+probar còdigo de dìa3 practica 1 de serverhttp0 al 
+serverhttp4 (capturas de pantalla)
+
