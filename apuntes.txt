@@ -1055,6 +1055,8 @@ for (let parr of parrafos)
 
 
 
+************************************************************************10/10//2025************************************************************************
+
 
 
 $ npm install chistes-aleatorios
@@ -1126,4 +1128,46 @@ npm install qr-creator --save //instala localmente y lo agrega a las dependencia
 
 probar còdigo de dìa3 practica 1 de serverhttp0 al 
 serverhttp4 (capturas de pantalla)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************13/10/2025************************************************************************
+al enviar un dns o dirección ip a través de la barra de búsqueda en el 
+cliente web se crea un request (con metainformación) y un 
+response que se envía al servidor
+
+Comunicación entre cliente-servidor
+Cliente-->Internet-->Servidor
+
+con objetos request, response
+Request--> Contiene toda la información
+Response--> Devuelto por el servidor
+
+socket
+puerto
+ip
+
+express.js
+máquina de render de express.js handlebars
+
 
