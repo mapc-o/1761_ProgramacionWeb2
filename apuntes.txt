@@ -1171,3 +1171,117 @@ express.js
 máquina de render de express.js handlebars
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************15/10/2025************************************************************************
+
+cliente.json
+
+{
+	"id": "CL2223",
+	"nombreCompleto": {
+		"primer": "Juan",
+		"segundo": "Antonio",
+		"paterno" : "Garcìa",
+		"materno" : "Herrera"
+	},
+	"balance" : 23500.0,
+	"tipo" : "premium",
+	"telefonos" : ["55667788", "55998877","55443322"],
+	"telefonos2" : {
+		"casa" : "55667788",
+		"celular" : "55998877",
+		"trabajo" : "55443322"
+	},
+	"activo" : true,
+	"prèstamo" : null
+} 
+
+
+cliente.js
+
+
+cliente = {
+	"id": "CL2223",
+	"nombreCompleto": {
+		"primer": "Juan",
+		"segundo": "Antonio",
+		"paterno" : "Garcìa",
+		"materno" : "Herrera"
+	},
+	"balance" : 23500.0,
+	"tipo" : "premium",
+	"telefonos" : ["55667788", "55998877","55443322"],
+	"telefonos2" : {
+		"casa" : "55667788",
+		"celular" : "55998877",
+		"trabajo" : "55443322"
+	},
+	"activo" : true,
+	"prèstamo" : null,
+	"saludar" : function(){console.log("Hola")}
+}
+
+cliente.saludar();
+console.log('El ID del cliente es: ' + cliente['id']);
+console.log('El primer nombre del cliente es: ' + cliente['nombreCompleto']['primer']);
+console.log('El telèfono de trabajo del cliente es: ' + cliente['telefonos2']['trabajo']);
+
+
+
+Objeto XML
+
+<persona>
+	<direcciòn>
+		<calle>Rancho Seco</calle>
+		<col>Impulsora</col>
+	</direcciòn>
+	<nombre>Jose</nombre>
+	<edad>32</edad>
+</persona>
+
+Como objeto JSON
+Persona = {
+	"direcciòn": {
+		"calle": "Rancho Seco",
+		"col": "Impulsora"
+	},
+	"nombre": "Jose",
+	"edad": 32
+}
+
+
+SOAP --> estàndar para intercambiar informaciòn entre servidores
+
+
+pelicula = {
+	"titulo": "Black Panther",
+	"fichaTecnica": {
+		"director": "Ryan Coogler",
+		"productor": "Kevin Feige",
+		"guionistas" : ["Ryan Coogler", "Joe Robert Cole"],
+		"productorMusical" : "Ludwig Göransson"
+	},
+	"balance" : 23500.0,
+	"tipo" : "premium",
+	"telefonos" : ["55667788", "55998877","55443322"],
+	"telefonos2" : {
+		"casa" : "55667788",
+		"celular" : "55998877",
+		"trabajo" : "55443322"
+	},
+	"activo" : true,
+	"prèstamo" : null,
+	"saludar" : function(){console.log("Hola")}
+}
