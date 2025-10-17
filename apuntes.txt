@@ -1271,9 +1271,17 @@ pelicula = {
 		"director": "Ryan Coogler",
 		"productor": "Kevin Feige",
 		"guionistas" : ["Ryan Coogler", "Joe Robert Cole"],
-		"productorMusical" : "Ludwig Göransson"
+		"productorMusical" : "Ludwig Göransson",
+		"fotografo" : "Rachel Morrison",
+		"montaje" : ["Michael P. Shawver", "Debbie Berman"],
+		"protagonistas" : [Chadwick Boseman", "Michael B. Jordan", "Lupita Nyong'o", "Danai Gurira", "Letitia Wright", "Martin Freeman", "Daniel Kaluuya", "Winston Duke" , "John Kani", "Sterling K. Brown", "Angela Bassett", "Forest Whitaker", "Andy Serkis"]
 	},
-	"balance" : 23500.0,
+	"datos" : {
+		"paìs" : "Estados Unidos",
+		"año" : 2018,
+		"estreno" : 29/01/2018,
+		"genero" : "cine de sue"
+	},
 	"tipo" : "premium",
 	"telefonos" : ["55667788", "55998877","55443322"],
 	"telefonos2" : {
@@ -1285,3 +1293,5 @@ pelicula = {
 	"prèstamo" : null,
 	"saludar" : function(){console.log("Hola")}
 }
+
+acepta obj json
