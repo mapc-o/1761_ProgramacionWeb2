@@ -1303,6 +1303,128 @@ acepta obj json
 
 
 
+
+
+
 ************************************************************************20/10/2025************************************************************************
 
 $ docker run -p 3306:3306 --name web2-mysql -e MYSQL_ROOT_PASSWORD=patito1234 -d mysql:tag
+
+
+
+
+
+
+
+
+************************************************************************27/10/2025************************************************************************
+
+
+mkdir express_web2
+cd express_web2
+mkdir introapp
+cd introapp
+npm install-g express-generator
+express --view=hbs . 
+(m`quina de render= handlebars) (esta carpeta)
+npm install
+npm start
+
+router/autos.js
+var express = require('express');
+var router = express.Router();
+
+/* GET catàlogo autos. */
+router.get('/catalogo', function(req, res, next) {
+  res.render('cata', {title: 'Catalogo de autos',  algo: 'Bienvenido' });
+});
+
+router.get('/detalle', (req, res, next)=>{
+    res.render('detalle', {title: 'Detalle de autos', auto: 'Mazda 3'});
+
+});
+
+module.exports = router;
+
+
+views/cata.hbs
+<h1>{{algo}}</h1>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+views/detalle.hbs
+<h3>{{auto}}</h3>
+
+<button type="button" class="btn btn-success">Success</button>
+
+
+views/layout.hbs
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' /> 
+    <script type="text/javascript" src="/scripts/script.js"></script>
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>  
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link</a></li>
+            <li><a class="dropdown-item" href="#">Another link</a></li>
+            <li><a class="dropdown-item" href="#">A third link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    {{{body}}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+app.js
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/autos', autosRouter);
+
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var autosRouter = require('./routes/autos');
+
+
+views/detalle.hbs
+<h3>{{auto}}</h3>
+
+<button type="button" class="btn btn-success">Success</button>
+<img src="../images/marselobueno.jpg">
