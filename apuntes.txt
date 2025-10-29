@@ -1428,3 +1428,115 @@ views/detalle.hbs
 
 <button type="button" class="btn btn-success">Success</button>
 <img src="../images/marselobueno.jpg">
+
+
+
+
+
+
+
+
+
+
+
+views/layout.hbs
+
+Cambiar dropdown de form
+<ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/autos/catalogo">Catalogo</a></li>
+            <li><a class="dropdown-item" href="/autos/detalle">Detalle</a></li>
+            <li><a class="dropdown-item" href="/autos/alta">Registrar</a></li>
+          </ul>
+
+
+
+routes/autos.js
+router.get('/alta', (req, res, next)=>{
+    res.render('autos/alta', {title: 'Alta de autos'});
+
+});
+
+router.post('/guardar', (req, res, next)=>{
+  console.log(req.body);
+  res.render('autos/confirmacion', {title: 'Guardando'});
+
+});
+
+
+
+
+views/autos/confirmacion.hbs
+<h2>OK</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width:400px">
+            <img class="card-img-top" src="{{nuevo.foto}}" alt="Card image">
+            <div class="card-body">
+            <h4 class="card-title">{{nuevo.marca}}</h4>
+            <p class="card-text">{{nuevo.modelo}}</p>
+            <p class="card-text">{{nuevo.color}}</p>
+            <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+</div>
+        </div>
+        <div class="col-md-4">
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+routes/autos.js
+router.get('/alta', (req, res, next)=>{
+    res.render('autos/alta', {title: 'Alta de autos'});
+
+});
+
+router.post('/guardar', (req, res, next)=>{
+  console.log(req.body);
+  auto_nuevo = {
+    marca: req.body.marca,
+    modelo: req.body.modelo,
+    foto: req.body.foto,
+    color: req. body.color
+  };
+  console.log("puto el q lo lea");
+  res.render('autos/confirmacion', {title: 'Guardando', nuevo: auto_nuevo});
+
+});
+
+
+
+************************************************************************2/10/2025************************************************************************
+
+views/alta.hbs
+<h1>Alta de autos</h1>
+
+<form action="/autos/guardar" method="post">
+  <div class="mb-3 mt-3">
+    <label for="marca" class="form-label">Marca:</label>
+    <input type="text" class="form-control" id="marca" placeholder="Captura una marca" name="marca">
+  </div>
+  <div class="mb-3">
+    <label for="modelo" class="form-label">Modelo:</label>
+    <input type="modelo" class="form-control" id="modelo" placeholder="Enter modelo" name="modelo">
+  </div>
+  <div class="mb-3">
+    <label for="foto" class="form-label">Url foto:</label>
+    <input type="modelo" class="form-control" id="foto" placeholder="Url a una foto" name="foto">
+  </div>
+  <div class="mb-3">
+    <label for="color">Selecciona el color:</label>
+    <select id="color" name="color">
+        <option value="rojo">rojo</option>
+        <option value="blanco">blanco</option>
+        <option value="plata">gris plata</option>
+        <option value="azul">azul</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
