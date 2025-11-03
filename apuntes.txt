@@ -1540,3 +1540,71 @@ views/alta.hbs
   </div>
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************03/11/2025************************************************************************
+export OPENAI_API_KEY="apikey"
+nano chatdemo.js
+npm install openai
+node chatdemo.js
+mv chatdemo.js chatdemo.mjs
+
+chatdemo.js
+import OpenAI from "openai";
+//const OpenAI = require("openai");
+const client = new OpenAI();
+
+const response = await client.responses.create({
+    model: "gpt-5",
+    input: "Dime todo lo que sepas de Travis Bickle de la FES Aragòn en la carrera de Ingenierìa en Computaciòn"
+});
+
+console.log(response.output_text);
+
+
+
+
+
+
+mkdir demorender
+cd demorender
+express --view=hbs
+npm install
+
+terminal de vs
+git init
+demorender/.gitignore
+node_modules
+node_modules/*
+git add .
+git branch -M main
+git commit -m "primer commit"
+git remote add origin https://github.com/mapco/demoweb2.git
+git push -u origin main
+
+
+render.com
+new web service
+language node
+start command npm start
+
