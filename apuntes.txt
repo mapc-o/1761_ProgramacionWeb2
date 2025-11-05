@@ -1608,3 +1608,100 @@ new web service
 language node
 start command npm start
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************05/11/2025************************************************************************
+
+introapp/db/index.js
+const mysql = require('mysql2/promise');
+require('dotenv').config();
+
+const pool = mysql.createPool({
+    host: '162.241.60.213',
+    user: 'jesushe2_monica',
+    password: 'bAzuSTI8&bEh',
+    database: 'jesushe2_monica',
+    waitForConnections: true,
+    connectionLimit: 10
+
+});
+
+module.exports = pool;
+
+/*
+export DB_HOST = 162.241.60.213
+export DB_USER=
+export DB_PASSWORD=
+export DB_NAME*/
+
+
+cata.hbs
+{{#each autos}}
+    {{marca}}
+    {{modelo}}
+{{/each}}
+
+autos.js
+var express = require('express');
+var router = express.Router();
+
+const pool = require('../db');
+
+/* GET catàlogo autos. */
+router.get('/catalogo', async function(req, res, next) {
+  const [ autos ] = await pool.query("SELECT * FROM automovil");
+
+  res.render('cata', {title: 'Catalogo de autos',  algo: 'Bienvenido', autos: autos });
+});
+
+router.get('/detalle', (req, res, next)=>{
+    res.render('detalle', {title: 'Detalle de autos', auto: 'Mazda 3'});
+
+});
+
+router.get('/alta', (req, res, next)=>{
+    res.render('autos/alta', {title: 'Alta de autos'});
+
+});
+
+router.post('/guardar', (req, res, next)=>{
+  console.log(req.body);
+  auto_nuevo = {
+    marca: req.body.marca,
+    modelo: req.body.modelo,
+    foto: req.body.foto,
+    color: req.body.color
+  };
+  console.log("proximamente");
+  const insertado = pool.query('INSERT INTO automovil(marca,modelo,foto) VALUES(?,?,?);', [auto_nuevo.marca, auto_nuevo.modelo, auto_nuevo.foto]);
+  res.render('autos/confirmacion', {title: 'Guardando', nuevo: auto_nuevo});
+
+});
+
+module.exports = router;
+
+
+npm install --save mysql2
+npm install --save dotenv
+//insertar las credenciales
+export DB_HOST=162.241.60.213
+export DB_USER=jesushe2_monica
+export DB_PASSWORD=bAzuSTI8&bEh
+export DB_NAME=jesushe2_monica
+
+
+
