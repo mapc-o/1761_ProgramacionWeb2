@@ -1819,3 +1819,86 @@ module.exports = app;
 google extensions rest 
 YARC
 http://127.0.0.1:3000/api/autos/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************************13/11/2025************************************************************************
+npm install -g express-generator
+mkdir web2
+cd web2
+mkdir test1
+cd test1
+express --view=hbs
+npm install
+npm start
+
+
+
+Dockerfile
+FROM node:22
+
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+
+
+
+.dockerignore
+./.idea
+./.idea/*
+
+./node_modules
+./node_modules/*
+
+Dockerfile
+
+
+
+index.js
+router.get('/ping', function (req, res, next) {
+  res.render('pong', { title: 'Saludos' });
+});
+
+
+index.hbs
+<h1>{{title}}</h1>
+<p>Bienvenido a mi app Nodejs en Docker</p>
+
+
+
+pong.hbs
+<h1>pong...</h1>
+
+
+
+docker build -t myapp .
+docker image ls
+docker run -p 3001:3000 myapp:latest
+docker close ID del contenedor
